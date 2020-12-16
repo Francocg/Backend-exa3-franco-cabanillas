@@ -33,8 +33,10 @@ public class UsuarioService implements UserDetailsService{
 		Usuario usuario = usuarioDao.validarUsuario(username);
 		System.out.println(g.toJson(usuario.getUsername()));
 		//System.out.println(g.toJson(rolDao.buscarRolUser(usuario.getIdusuario())));
+		System.out.println(g.toJson(rolDao.buscarRolUser(usuario.getIdusuario())));
 		UserDetails details = new User(usuario.getUsername(),usuario.getPassword(),rolDao.buscarRolUser(usuario.getIdusuario()));
 		//System.out.println("hola: "+g.toJson(details));
+		
 		return details;
 	}
 

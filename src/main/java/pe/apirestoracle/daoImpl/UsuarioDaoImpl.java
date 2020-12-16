@@ -25,7 +25,7 @@ private JdbcTemplate jdbcTemplate;
 	}
 	@Override
 	public Map<String, Object> datosUsuario(String username) {
-		String SQL = "SELECT u.idusuario, r.idrol, p.nombres, u.username FROM personas p " + 
+		String SQL = "SELECT u.idusuario, r.idrol, p.nombres, u.username FROM persona p " + 
 				"INNER JOIN usuarios u ON u.idpersona = p.idpersona " + 
 				"INNER JOIN usuarios_roles ur ON u.idusuario = ur.idusuario " + 
 				"INNER JOIN roles r ON r.idrol=ur.idrol "+
